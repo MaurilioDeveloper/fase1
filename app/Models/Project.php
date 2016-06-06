@@ -13,14 +13,28 @@ class Project extends Model implements Transformable
     protected $guarded = ['id'];
     
     /**
-     * 
+     * -------------------------------------------------------------------------
      * @return Notes
      * Retorna a ligação das tabelas de Notes
      * Com Projects. Retornando que um projeto
      * possui varias notas.
+     * -------------------------------------------------------------------------
      */
     public function notes()
     {
         return $this->hasMany(ProjectNote::class);
+    }
+    
+    /**
+     * -------------------------------------------------------------------------
+     * @return Members
+     * Retorna a ligação da tabela de Membros com os Projetos,
+     * Project -> 'project_id' Member -> 'member_id', utilizando
+     * a tabela de 'User' e 'project_members'.
+     * -------------------------------------------------------------------------
+     */
+    public function members()
+    {
+        return $this->belongsToMany(User::class, 'project_members', 'project_id', 'member_id');
     }
 }
