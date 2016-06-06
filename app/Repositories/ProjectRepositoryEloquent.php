@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Models\Client;
+use App\Models\Project;
 use Prettus\Repository\Eloquent\BaseRepository;
-use App\Repositories\ClientRepository as ClientRepository;
+use App\Repositories\ProjectRepository as ProjectRepository;
 
-class ClientRepositoryEloquent extends BaseRepository implements ClientRepository
+class ProjectRepositoryEloquent extends BaseRepository implements ProjectRepository
 {
     /**
      * 
@@ -17,7 +17,12 @@ class ClientRepositoryEloquent extends BaseRepository implements ClientRepositor
      */
     public function model() 
     {
-        return Client::class;
+        return Project::class;
+    }
+    
+    public function boot()
+    {
+        $this->pushCriteria(app(\Prettus\Repository\Criteria\RequestCriteria::class));
     }
 
 }

@@ -20,8 +20,10 @@ class DatabaseSeeder extends Seeder
          * Responsavel por criar nossas seeders com
          * dados fakes.
          */
-        // $this->call(UserTableSeeder::class);
+        $this->call(UserTableSeeder::class);
         $this->call(ClientTableSeeder::class);
+        $this->call(ProjectTableSeeder::class);
+        $this->call(ProjectNoteTableSeeder::class);
 
         Model::reguard();
     }

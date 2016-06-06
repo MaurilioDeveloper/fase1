@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ClientRepository as ClientRepository;
+use App\Repositories\ProjectRepository as ProjectRepository;
 use App\Http\Controllers\Controller;
-use App\Services\ClientService;
+use App\Services\ProjectService;
 
-class ClientController extends Controller
+class ProjectController extends Controller
 {
     /**
      *
@@ -27,7 +27,7 @@ class ClientController extends Controller
      */
     private $service;
     
-    public function __construct(ClientRepository $repository, Request $request, ClientService $service) {
+    public function __construct(ProjectRepository $repository, Request $request, ProjectService $service) {
         $this->repository = $repository;
         $this->request = $request;
         $this->service = $service;
@@ -81,7 +81,7 @@ class ClientController extends Controller
      */
     public function update($id)
     {
-        $this->service->update($this->request->all(), $id);
+        return $this->service->update($this->request->all(), $id);
         //$this->repository->find($id)->update($this->request->all());
     }
 
@@ -93,6 +93,6 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        $this->repository->find($id)->delete();
+        return $this->repository->delete($id);
     }
 }

@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\ClientRepository as ClientRepository;
+use App\Repositories\ProjectNoteRepository as ProjectNoteRepository;
 use App\Http\Controllers\Controller;
-use App\Services\ClientService;
+use App\Services\ProjectNoteService;
 
-class ClientController extends Controller
+class ProjectNoteController extends Controller
 {
     /**
      *
-     * @var ClientRepository
+     * @var ClientNoteRepository
      */
     private $repository;
     
@@ -23,11 +23,11 @@ class ClientController extends Controller
     
     /**
      *
-     * @var ClientService 
+     * @var ProjectNoteService 
      */
     private $service;
     
-    public function __construct(ClientRepository $repository, Request $request, ClientService $service) {
+    public function __construct(ProjectNoteRepository $repository, Request $request, ProjectNoteService $service) {
         $this->repository = $repository;
         $this->request = $request;
         $this->service = $service;
@@ -36,15 +36,22 @@ class ClientController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * Dependencia ClientRepository (Interface).
+     * Dependencia ProjectNoteRepository (Interface).
      * Responsavel por diminuir o acoplamento de codigo
      * (Desing Patterns). Podendo assim, trabalhar com
      * quaisquer ORM (Doctrine, Eloquent...), assumindo a
      * responsabilidade pelo Provider 'RepositoryProvider'.
      */
-    public function index()
+    
+    /**
+     * 
+     * @param type $id
+     * @return Retorna todas as anotações de
+     * um determinado Projeto.
+     */
+    public function index($id)
     {
-        return $this->repository->all();
+        return $this->repository->findWhere(['project_id' => $id]);
     }
 
     /**
@@ -66,9 +73,9 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $noteId)
     {
-        return $this->repository->find($id);
+        return $this->repository->findWhere(['project_id' => $id, 'id' => $noteId]);
     }
 
 
@@ -79,20 +86,20 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update($id, $noteId)
     {
-        $this->service->update($this->request->all(), $id);
+        return $this->service->update($this->request->all(), $noteId);
         //$this->repository->find($id)->update($this->request->all());
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $noteId
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, $noteId)
     {
-        $this->repository->find($id)->delete();
+        return $this->repository->delete($noteId);
     }
 }
