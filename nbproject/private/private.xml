@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Transformers/ProjectTransformer.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/database/factories/ModelFactory.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Kernel.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/services.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/app.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Models/User.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/auth.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Middleware/VerifyCsrfToken.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Presenters/ProjectPresenter.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/routes.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Middleware/CheckProjectOwner.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/repository.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/oauth2.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Repositories/ProjectRepositoryEloquent.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Middleware/EncryptCookies.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/OAuth/PasswordGrantVerifier.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/composer.json</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/database/migrations/2014_10_12_000000_create_users_table.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Models/Project.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Models/ProjectFile.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Controllers/ProjectController.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/database/seeds/UserTableSeeder.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Middleware/Authenticate.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Http/Controllers/Auth/PasswordController.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Transformers/ProjectMemberTransformer.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Models/ProjectMember.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/database.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/database/migrations/2016_06_06_142534_create_project_members_table.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/app/Models/Client.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/config/filesystems.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/database/migrations/2016_06_08_125114_create_project_files_table.php</file>
+            <file>file:/C:/wamp/www/gerenciamento_projeto/database/migrations/2016_06_05_223355_create_project_notes_table.php</file>
+        </group>
+    </open-files>
+</project-private>

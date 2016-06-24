@@ -37,4 +37,16 @@ class Project extends Model implements Transformable
     {
         return $this->belongsToMany(User::class, 'project_members', 'project_id', 'member_id');
     }
+    
+    /**
+     * -------------------------------------------------------------------------
+     * @return Files
+     * Retorna a ligação da tabela de ProjectFiles com os Projetos.
+     * Com isso, retorna todos os arquivos de um determinado projeto.
+     * -------------------------------------------------------------------------
+     */
+    public function files()
+    {
+        return $this->hasMany(ProjectFile::class);
+    }
 }

@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Project;
 use Prettus\Repository\Eloquent\BaseRepository;
 use App\Repositories\ProjectRepository as ProjectRepository;
+use App\Presenters\ProjectPresenter;
 
 /**
  * @class ProjectRepositoryEloquent
@@ -69,5 +70,9 @@ class ProjectRepositoryEloquent extends BaseRepository implements ProjectReposit
         }
         return false;
         
+    }
+    
+    public function presenter() {
+        return ProjectPresenter::class;
     }
 }
