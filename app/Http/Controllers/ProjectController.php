@@ -28,10 +28,17 @@ class ProjectController extends Controller
      */
     private $service;
     
-    public function __construct(ProjectRepository $repository, Request $request, ProjectService $service) {
+     /**
+     *
+     * @var Authorizer 
+     */
+    private $auth;
+    
+    public function __construct(Authorizer $auth, ProjectRepository $repository, Request $request, ProjectService $service) {
         $this->repository = $repository;
         $this->request = $request;
         $this->service = $service;
+        $this->auth = $auth;
     }
     /**
      * Display a listing of the resource.
@@ -53,7 +60,7 @@ class ProjectController extends Controller
          * ---------------------------------------------------------------------
          */
         return $this->repository->findWhere(
-            ['owner_id' => Authorizer::getResourceOwnerId()]
+            ['owner_id' => $this->auth->getResourceOwnerId()]
         );
         // return $this->repository->all();
     }
@@ -145,14 +152,14 @@ class ProjectController extends Controller
     
     private function checkProjectOwner($projectId)
     {
-        $userId = Authorizer::getResourceOwnerId();
+        $userId = $this->auth->getResourceOwnerId();
         
         return $this->repository->isOwner($projectId, $userId);
        
     }
     private function checkProjectMember($projectId)
     {
-        $userId = Authorizer::getResourceOwnerId();
+        $userId = $this->auth->getResourceOwnerId();
         
         return $this->repository->hasMember($projectId, $userId);
        

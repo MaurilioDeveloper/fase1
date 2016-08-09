@@ -7,7 +7,7 @@ use App\Validators\ProjectValidator;
 use Illuminate\Support\Facades\Storage;
 use Prettus\Validator\Exceptions\ValidatorException;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Contracts\Filesystem\Factory as Storage;
+use Illuminate\Contracts\Filesystem\Factory as Storage2;
 
 /**
  * Description of ClientService
@@ -61,7 +61,7 @@ class ProjectService {
         ProjectRepository $repository, 
         ProjectValidator $validator, 
         Filesystem $filesystem,
-        Storage $storage
+        Storage2 $storage
     ) 
     {
         $this->repository = $repository;

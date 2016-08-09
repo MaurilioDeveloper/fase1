@@ -12,7 +12,7 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
 
 /**
@@ -20,11 +20,11 @@ Route::get('/', function () {
  * Retorna um token valido para que o usuario
  * possa se autenticar no sistema.
  */
-Route::post('oauth/access_token', function() {
-    return Response::json(Authorizer::issueAccessToken());
-});
+//Route::post('oauth/access_token', function() {
+  //  return Response::json(Authorizer::issueAccessToken());
+//});
 
-Route::group(['middleware' => 'oauth'], function() {
+//Route::group(['middleware' => 'oauth'], function() {
 
     /**
      * -------------------------------------------------------------------------
@@ -83,4 +83,4 @@ Route::group(['middleware' => 'oauth'], function() {
       Route::delete('project/{id}', 'ProjectController@destroy');
      * 
      */
-});
+//});
