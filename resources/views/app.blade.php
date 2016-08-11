@@ -1,12 +1,13 @@
-<?php $tituloProjeto = "Plano de Ação"; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>{{$tituloProjeto}}</title>
+	<title>Laravel</title>
         @if(Config::get('app.debug'))
+        <!--
             <link rel="stylesheet" href="{{asset('build/css/vendor/bootstrap.min.css')}}"/>
             <link rel="stylesheet" href="{{asset('build/css/vendor/bootstrap-theme.min.css')}}"/>
             <link rel="stylesheet" href="{{asset('build/css/vendor/angular-material.min.css')}}" />
@@ -15,7 +16,7 @@
         @else
             <link href="{{elixir('css/all.css')}}" rel="stylesheet"/>
         @endif
-
+        -->
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -28,6 +29,7 @@
 
 </head>
 <body>
+    <!--
     <div class="blue">
     <nav class="navbar">
 		<div class="container-fluid">
@@ -69,6 +71,7 @@
     <div ng-view></div>
 
 	<!-- Scripts -->
+        <!--
 	@if(Config::get('app.debug'))
             <script src="{{asset('build/js/vendor/jquery.min.js')}}"></script>
             <script src="{{asset('build/js/vendor/angular.min.js')}}"></script>
@@ -90,9 +93,10 @@
            
             <!-- SERVICES -->
             
-            
+            <!--
         @else
             <script src="{{elixir('js/all.js')}}"></script>
         @endif
+            -->
 </body>
 </html>
